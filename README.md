@@ -22,17 +22,17 @@ To use Lumira DA extension SQL Server Analysis Services you need to download 2 M
 
 <strong>Use Lumira DA extension for SQL Server Analysis Services</strong><br>
 You have to connect to a SSAS server with your own credentials: click “Login” button.<br>
-![My image](https://github.com/SAP/lumira-extension-da-sql-server-analysis-services/blob/master/readmescreenshots/1.png)<br>
+![My image](https://github.com/SAP/lumira-extension-da-sql-server-analysis-services-ssas/blob/master/readmescreenshots/1.png)<br>
 
 Once connected, you select a catalog and enter an MDX query.<br>
-![My image](https://github.com/SAP/lumira-extension-da-sql-server-analysis-services/blob/master/readmescreenshots/2.png)<br>
+![My image](https://github.com/SAP/lumira-extension-da-sql-server-analysis-services-ssas/blob/master/readmescreenshots/2.png)<br>
 You can use Information Design Tool (delivered in SAP BI 4.x) to run a query and copy/paste the generated MDX.<br>
 
 It’s possible to preview the results of the query in the application: click on “View query results” button.<br>
-![My image](https://github.com/SAP/lumira-extension-da-sql-server-analysis-services/blob/master/readmescreenshots/3.png)<br>
+![My image](https://github.com/SAP/lumira-extension-da-sql-server-analysis-services-ssas/blob/master/readmescreenshots/3.png)<br>
 
 Then you have to click “Run Query” button to execute the query and send the results to Lumira.<br>
-![My image](https://github.com/SAP/lumira-extension-da-sql-server-analysis-services/blob/master/readmescreenshots/4.png)<br>
+![My image](https://github.com/SAP/lumira-extension-da-sql-server-analysis-services-ssas/blob/master/readmescreenshots/4.png)<br>
 
 Files
 -----------
