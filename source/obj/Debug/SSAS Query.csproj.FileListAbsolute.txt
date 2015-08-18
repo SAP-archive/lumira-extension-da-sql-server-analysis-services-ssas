@@ -1,0 +1,14 @@
+C:\Perso\DEV\CSharp\Perso\Data Generator Extensions\SSAS Query\obj\Debug\Interop.ADODB.dll
+C:\Perso\DEV\CSharp\Perso\Data Generator Extensions\SSAS Query\obj\Debug\Interop.ADOMD.dll
+C:\Perso\DEV\CSharp\Perso\Data Generator Extensions\SSAS Query\obj\Debug\SSAS Query.csproj.ResolveComReference.cache
+C:\Perso\DEV\CSharp\Perso\Data Generator Extensions\SSAS Query\bin\Debug\SSAS Query.exe
+C:\Perso\DEV\CSharp\Perso\Data Generator Extensions\SSAS Query\bin\Debug\SSAS Query.pdb
+C:\Perso\DEV\CSharp\Perso\Data Generator Extensions\SSAS Query\bin\Debug\Interop.ADODB.dll
+C:\Perso\DEV\CSharp\Perso\Data Generator Extensions\SSAS Query\bin\Debug\Interop.ADOMD.dll
+C:\Perso\DEV\CSharp\Perso\Data Generator Extensions\SSAS Query\obj\Debug\ResolveAssemblyReference.cache
+C:\Perso\DEV\CSharp\Perso\Data Generator Extensions\SSAS Query\obj\Debug\MDXQueryBuilder.frmConnection.resources
+C:\Perso\DEV\CSharp\Perso\Data Generator Extensions\SSAS Query\obj\Debug\SSAS_Query.Properties.Resources.resources
+C:\Perso\DEV\CSharp\Perso\Data Generator Extensions\SSAS Query\obj\Debug\MDXQueryBuilder.formQuery.resources
+C:\Perso\DEV\CSharp\Perso\Data Generator Extensions\SSAS Query\obj\Debug\SSAS Query.csproj.GenerateResource.Cache
+C:\Perso\DEV\CSharp\Perso\Data Generator Extensions\SSAS Query\obj\Debug\SSAS Query.exe
+C:\Perso\DEV\CSharp\Perso\Data Generator Extensions\SSAS Query\obj\Debug\SSAS Query.pdb

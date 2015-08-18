@@ -1,0 +1,92 @@
+Select 
+CrossJoin([Product].[Category].children,[Product].[Subcategory].children,
+[Product].[Product].children) on rows,
+{[Measures].[Internet Sales Amount],[Measures].[Internet Freight Cost]} on columns 
+from [Adventure Works]
+---------------------------------------------------------------------------------------
+SELECT
+	NON EMPTY {[Measures].[Sales Amount],[Measures].[Tax Amount],[Measures].[Order Quantity]} ON COLUMNS,
+	NON EMPTY Crossjoin(Hierarchize(Except({[Product].[Product Categories].[All Products],Except(Descendants([Product].[Product Categories].[All Products]), {[Product].[Product Categories].[All Products]})}, {[Product].[Product Categories].[Product].Members})), Hierarchize(Except({[Date].[Calendar].[All Periods],Except(Descendants([Date].[Calendar].[All Periods]), {[Date].[Calendar].[All Periods]})}, {[Date].[Calendar].[Month].Members,[Date].[Calendar].[Date].Members})))
+DIMENSION PROPERTIES PARENT_UNIQUE_NAME ON ROWS
+FROM [Adventure Works]
+---------------------------------------------------------------------------------------
+SELECT
+	NON EMPTY {[Measures].[Order Quantity],[Measures].[Extended Amount],[Measures].[Total Product Cost],[Measures].[Sales Amount],[Measures].[Gross Profit],[Measures].[Freight Cost]} ON COLUMNS,
+	NON EMPTY Crossjoin(Crossjoin(Crossjoin([Date].[Calendar Year].[Calendar Year].Members, [Date].[Calendar Quarter of Year].[Calendar Quarter of Year].Members), [Product].[Category].[Category].Members), [Product].[Subcategory].[Subcategory].Members)
+DIMENSION PROPERTIES PARENT_UNIQUE_NAME ON ROWS
+FROM [Adventure Works]
+---------------------------------------------------------------------------------------
+SELECT
+	NON EMPTY {[Measures].[Sales Amount],[Measures].[Tax Amount],[Measures].[Order Quantity]} ON COLUMNS,
+	NON EMPTY Crossjoin(Hierarchize(Except({[Product].[Product Categories].[All Products],Except(Descendants([Product].[Product Categories].[All Products]), {[Product].[Product Categories].[All Products]})}, {[Product].[Product Categories].[Product].Members})), Hierarchize(Except({[Date].[Calendar].[All Periods],Except(Descendants([Date].[Calendar].[All Periods]), {[Date].[Calendar].[All Periods]})}, {[Date].[Calendar].[Month].Members,[Date].[Calendar].[Date].Members})))
+DIMENSION PROPERTIES PARENT_UNIQUE_NAME ON ROWS
+FROM [Adventure Works]
+---------------------------------------------------------------------------------------
+SELECT
+	NON EMPTY {[Measures].[Amount]} ON COLUMNS,
+	NON EMPTY Hierarchize({[Account].[Accounts].&[47],[Account].[Accounts].&[95],Except(Descendants([Account].[Accounts].&[95]), {[Account].[Accounts].&[95]}),[Account].[Accounts].&[1],[Account].[Accounts].&[2],[Account].[Accounts].&[3],[Account].[Accounts].&[17],[Account].[Accounts].&[24],[Account].[Accounts].&[25],[Account].[Accounts].&[26],[Account].[Accounts].&[41]})
+DIMENSION PROPERTIES PARENT_UNIQUE_NAME ON ROWS
+FROM [Adventure Works]
+---------------------------------------------------------------------------------------
+Select 
+CrossJoin([Product].[Category].children,[Product].[Subcategory].children,
+[Product].[Product].children) on rows,
+{[Measures].[Internet Sales Amount],[Measures].[Internet Freight Cost]} on columns 
+from [Adventure Works]
+---------------------------------------------------------------------------------------
+select CrossJoin([Product].[Category].children,[Product].[Subcategory].children) on rows,
+[Measures].[Internet Sales Amount] on columns from
+[Adventure Works]
+---------------------------------------------------------------------------------------
+select  [Measures].[Internet Sales Amount] on columns,
+filter([Product].[Product].[Product].members ,
+[Measures].[Internet Sales Amount]>5000
+)
+on rows
+from [Adventure Works]
+where {[Date].[Calendar Year].[CY 2007]};
+WITH MEMBER 
+      [Measures].[GrossProfitPerUnit] AS
+      [Measures].[Internet Gross Profit] /   
+      [Measures].[Internet Order Quantity],
+   FORMAT_STRING = '$0.00'
+   SET [OrderedSales] AS
+   ORDER(
+        ([Customer].[State-Province].CHILDREN,
+         [Product].[Subcategory].CHILDREN ),
+         [GrossProfitPerUnit],BDESC)
+   SELECT {[Measures].[Internet Sales Amount],
+           [GrossProfitPerUnit]}  
+   ON COLUMNS,
+   NON EMPTY  [OrderedSales] on rows
+   FROM [Adventure Works] 
+---------------------------------------------------------------------------------------
+SELECT
+	NON EMPTY {[Measures].[Order Quantity],[Measures].[Sales Amount]} ON COLUMNS,
+	NON EMPTY Crossjoin(Hierarchize(Except({[Date].[Calendar].[All Periods],Except(Descendants([Date].[Calendar].[All Periods]), {[Date].[Calendar].[All Periods]})}, {[Date].[Calendar].[Date].Members})), Hierarchize({[Product].[Product Categories].[Category].Members,[Product].[Product Categories].[Subcategory].Members}))
+DIMENSION PROPERTIES PARENT_UNIQUE_NAME ON ROWS
+FROM [Adventure Works]
+---------------------------------------------------------------------------------------
+WITH
+	MEMBER [Measures].[PeriodsToDate] AS 'SUM(PeriodsToDate([Date].[Calendar].[Calendar Year] , [Date].[Calendar].currentmember), [Measures].[Sales Amount])'
+SELECT
+	NON EMPTY {[Measures].[Sales Amount],[Measures].[PeriodsToDate]} ON COLUMNS,
+	NON EMPTY Hierarchize({[Date].[Calendar].[Calendar Quarter].Members})
+DIMENSION PROPERTIES PARENT_UNIQUE_NAME ON ROWS
+FROM [Adventure Works]
+---------------------------------------------------------------------------------------
+select  [Measures].[Internet Sales Amount] on columns,
+filter([Product].[Product].[Product].members ,
+([Measures].[Internet Sales Amount]<19000 and _
+left([Product].[Product].currentmember.name,1)="A")
+)
+on rows
+from [Adventure Works]
+where {[Date].[Calendar Year].[CY 2007]}
+---------------------------------------------------------------------------------------
+select  [Measures].[Internet Sales Amount] on columns,
+order([Product].[Product].[Product].members ,[Measures].[Internet Sales Amount],desc)
+on rows
+from [Adventure Works]
+where {[Date].[Calendar Year].[CY 2007]}
+---------------------------------------------------------------------------------------

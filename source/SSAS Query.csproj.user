@@ -1,0 +1,10 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartArguments>--mode preview -params "server=localhost;true;user=;true;password=;true;catalog=Adventure Works DW;true;mdx query=SELECT
+	NON EMPTY {[Measures].[Sales Amount],[Measures].[Tax Amount],[Measures].[Order Quantity]} ON COLUMNS,
+	NON EMPTY Crossjoin(Hierarchize(Except({[Product].[Product Categories].[All Products],Except(Descendants([Product].[Product Categories].[All Products]), {[Product].[Product Categories].[All Products]})}, {[Product].[Product Categories].[Product].Members})), Hierarchize(Except({[Date].[Calendar].[All Periods],Except(Descendants([Date].[Calendar].[All Periods]), {[Date].[Calendar].[All Periods]})}, {[Date].[Calendar].[Month].Members,[Date].[Calendar].[Date].Members})))
+DIMENSION PROPERTIES PARENT_UNIQUE_NAME ON ROWS
+FROM [Adventure Works]
+;true;"</StartArguments>
+  </PropertyGroup>
+</Project>

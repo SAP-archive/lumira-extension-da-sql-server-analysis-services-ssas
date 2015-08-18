@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSAS Query", "SSAS Query.csproj", "{1CD793FE-BE25-47EB-A43C-5AB936AF6D5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CD793FE-BE25-47EB-A43C-5AB936AF6D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CD793FE-BE25-47EB-A43C-5AB936AF6D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CD793FE-BE25-47EB-A43C-5AB936AF6D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CD793FE-BE25-47EB-A43C-5AB936AF6D5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
